@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>guides.spring.gs</groupId>
-    <artifactId>SchedulingTasks</artifactId>
+    <artifactId>ConsumingRest</artifactId>
     <version>1</version>
 
     <parent>

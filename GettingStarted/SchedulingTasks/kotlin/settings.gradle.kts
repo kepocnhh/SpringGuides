@@ -1,1 +1,1 @@
-rootProject.name = "RestService"
+rootProject.name = "SchedulingTasks"
