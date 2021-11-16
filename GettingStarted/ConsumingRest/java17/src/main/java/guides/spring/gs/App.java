@@ -25,7 +25,7 @@ public class App {
     }
 
     private void onTemplate(final RestTemplate template) {
-        final Quote quote = template.getForObject("https://quoters.apps.pcfone.io/api/random", Quote.class);
+        final var quote = template.getForObject("https://quoters.apps.pcfone.io/api/random", Quote.class);
         Objects.requireNonNull(quote);
         log.info(quote.toString());
     }
