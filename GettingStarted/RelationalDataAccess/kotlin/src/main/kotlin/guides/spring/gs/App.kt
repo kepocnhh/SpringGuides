@@ -25,9 +25,14 @@ open class App : CommandLineRunner {
     override fun run(vararg args: String?) {
         log.info("Creating tables")
         jdbcTemplate.execute("DROP TABLE customers IF EXISTS")
-        jdbcTemplate.execute("CREATE TABLE customers(" +
-                "id SERIAL, first_name VARCHAR(255), last_name VARCHAR(255))")
-        val names: List<Array<Any>> = listOf("John Woo", "Jeff Dean", "Josh Bloch", "Josh Long")
+        jdbcTemplate.execute("""
+            CREATE TABLE customers(
+                id SERIAL,
+                first_name VARCHAR(255),
+                last_name VARCHAR(255)
+            )
+        """.trimIndent())
+        val names = listOf("John Woo", "Jeff Dean", "Josh Bloch", "Josh Long")
             .map { it.split(" ").toTypedArray() }
         names.forEach {
             log.info(String.format("Inserting customer record for %s %s", it[0], it[1]))
